@@ -317,7 +317,7 @@ void setup() {
   Serial.begin(9600);
   if (esp32) {
     
-    ThermistorPin1 = 39;
+    ThermistorPin1 = 39; // ADC1 GPIO pin, to use this code with the integrated wifi
     ThermistorPin2 = 34;
     ThermistorPin3 = 35;
     ThermistorPin4 = 32;
