@@ -15,12 +15,16 @@ bool esp32 = true;       // change to false when using Arduino
 
 int ThermistorPin1;
 double adc1Max, Vs1;
+
 int ThermistorPin2;
 double adc2Max, Vs2;
+
 int ThermistorPin3;
 double adc3Max, Vs3;
+
 int ThermistorPin4;
 double adc4Max, Vs4;
+
 int ThermistorPin5;
 double adc5Max, Vs5;
 
@@ -312,16 +316,19 @@ const float ADC_LUT[4096] PROGMEM = { 0,
 void setup() {
   Serial.begin(9600);
   if (esp32) {
+    
     ThermistorPin1 = 39;
     ThermistorPin2 = 34;
     ThermistorPin3 = 35;
     ThermistorPin4 = 32;
     ThermistorPin5 = 33;
+    
     adc1Max = 4095.0; // ADC resolution 12-bit (0-4095)
     adc2Max = 4095.0;
     adc3Max = 4095.0;
     adc4Max = 4095.0;
     adc5Max = 4095.0;
+    
     Vs1 = 3.3;
     Vs2 = 3.3;
     Vs3 = 3.3;
@@ -356,6 +363,7 @@ void loop() {
   double adc3 = 0;
   double adc4 = 0;
   double adc5 = 0;
+  
   if (esp32) {
     adc1 = analogRead(ThermistorPin1);
     adc1 = ADC_LUT[(int)adc1];
