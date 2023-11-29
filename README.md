@@ -1,3 +1,5 @@
+Readme Not updated yet
+
 ## Using NTC Thermistor with Arduino and esp32
 
 The sketch works for both Arduino and ESP32 by just changing the line:
